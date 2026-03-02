@@ -1,4 +1,5 @@
 import { getList } from '@/lib/frappe';
+import Link from 'next/link';
 
 export default async function StockPage() {
     let items = [];
@@ -16,9 +17,9 @@ export default async function StockPage() {
                     <h1 className="text-3xl font-bold text-slate-900">Stock</h1>
                     <p className="text-gray-500 mt-2">Manage your items, catalog, and inventory.</p>
                 </div>
-                <button className="bg-indigo-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors shadow-sm">
+                <Link href="/stock/new" className="bg-indigo-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors shadow-sm text-center">
                     Add New Item
-                </button>
+                </Link>
             </div>
 
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">

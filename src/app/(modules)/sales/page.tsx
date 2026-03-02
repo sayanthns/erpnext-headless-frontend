@@ -1,4 +1,5 @@
 import { getList } from '@/lib/frappe';
+import Link from 'next/link';
 
 export default async function SalesPage() {
     let invoices = [];
@@ -16,9 +17,9 @@ export default async function SalesPage() {
                     <h1 className="text-3xl font-bold text-slate-900">Sales</h1>
                     <p className="text-gray-500 mt-2">Manage your sales invoices and customers.</p>
                 </div>
-                <button className="bg-indigo-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors shadow-sm">
+                <Link href="/sales/new" className="bg-indigo-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors shadow-sm text-center">
                     New Invoice
-                </button>
+                </Link>
             </div>
 
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
@@ -49,8 +50,8 @@ export default async function SalesPage() {
                                         <td className="p-4 text-gray-800">{inv.customer_name || inv.customer}</td>
                                         <td className="p-4">
                                             <span className={`px-2.5 py-1 text-xs rounded-full font-medium ${inv.status === 'Paid' ? 'bg-green-100 text-green-700' :
-                                                    inv.status === 'Unpaid' ? 'bg-orange-100 text-orange-700' :
-                                                        'bg-gray-100 text-gray-700'
+                                                inv.status === 'Unpaid' ? 'bg-orange-100 text-orange-700' :
+                                                    'bg-gray-100 text-gray-700'
                                                 }`}>
                                                 {inv.status}
                                             </span>
